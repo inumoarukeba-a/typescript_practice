@@ -7,4 +7,7 @@ yes = true;
 var car = 'BMW';
 car = { brand: 'BMW' };
 var hobbies = ['読書', 'スポーツ'];
-console.log(typeof hobbies);
+hobbies.push('100');
+console.log(hobbies);
+var olympic = ['東京', 2020];
+console.log(olympic);

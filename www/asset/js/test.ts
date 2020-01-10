@@ -9,5 +9,6 @@ yes = true
 let car: any = 'BMW'
 car = { brand: 'BMW' }
 
-let hobbies = ['読書', 'スポーツ']
-console.log(typeof hobbies)
+let hobbies: string[] = ['読書', 'スポーツ']
+hobbies.push('100')
+console.log(hobbies)
