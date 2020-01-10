@@ -10,8 +10,8 @@
   </div>
 
   <script defer src="/asset/js/test.js?v=<?php echo $cache_version;?>"></script>
-  <script defer src="/asset/js/vendor.js?v=<?php echo $cache_version;?>"></script>
-  <script defer src="/asset/js/script.js?v=<?php echo $cache_version;?>"></script>
+  <!-- <script defer src="/asset/js/vendor.js?v=<?php echo $cache_version;?>"></script> -->
+  <!-- <script defer src="/asset/js/script.js?v=<?php echo $cache_version;?>"></script> -->
 
 </body>
 </html>

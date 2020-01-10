@@ -6,3 +6,5 @@ var yes;
 yes = true;
 var car = 'BMW';
 car = { brand: 'BMW' };
+var hobbies = ['読書', 'スポーツ'];
+console.log(typeof hobbies);
