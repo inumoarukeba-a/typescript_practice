@@ -1,14 +1,18 @@
 /**
  * 型指定
  */
+// 数字
 let num: number = 100
 
+// 文字列
 let hello: string
 hello = 'こんにちは'
 
+// ルール型
 let yes: boolean
 yes = true
 
+// なんでも
 let car: any = 'BMW'
 car = { brand: 'BMW' }
 
@@ -37,3 +41,20 @@ enum Colors {
 }
 let myColor: Colors = Colors.Green
 console.log(myColor)
+
+/**
+ * 関数
+ */
+
+let myName = '太郎'
+function returnMyName(): string {
+  return myName
+}
+console.log(returnMyName())
+
+// returnを許可しない
+function sayHello(): void {
+  console.log('Hello!')
+  return myName
+}
+sayHello()

@@ -2,11 +2,15 @@
 /**
  * 型指定
  */
+// 数字
 var num = 100;
+// 文字列
 var hello;
 hello = 'こんにちは';
+// ルール型
 var yes;
 yes = true;
+// なんでも
 var car = 'BMW';
 car = { brand: 'BMW' };
 /**
@@ -33,3 +37,16 @@ var Colors;
 })(Colors || (Colors = {}));
 var myColor = Colors.Green;
 console.log(myColor);
+/**
+ * 関数
+ */
+var myName = '太郎';
+function returnMyName() {
+    return myName;
+}
+console.log(returnMyName());
+function sayHello() {
+    console.log('Hello!');
+    return myName;
+}
+sayHello();
