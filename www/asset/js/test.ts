@@ -73,4 +73,10 @@ let something: never
 function multiply(value1: number, value2: number): number {
   return value1 * value2
 }
-console.log(multiply(23, 'あ'))
+console.log(multiply(23, 7))
+
+let myFunctionType: (val1: number, val2: number) => number
+myFunctionType = sayHello
+myFunctionType()
+myFunctionType = multiply
+console.log(myFunctionType(23, 89))
