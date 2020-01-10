@@ -45,8 +45,22 @@ function returnMyName() {
     return myName;
 }
 console.log(returnMyName());
+// returnを許可しない
 function sayHello() {
     console.log('Hello!');
-    return myName;
 }
 sayHello();
+/**
+ * Never
+ */
+function noReturn() {
+    throw new Error('エラーです！');
+}
+var something;
+/**
+ * 引数
+ */
+function multiply(value1, value2) {
+    return value1 * value2;
+}
+console.log(multiply(23, 'あ'));
