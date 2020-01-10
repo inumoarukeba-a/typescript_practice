@@ -1,8 +1,7 @@
-let myName = '太郎'
-myName = 28
+let num: number = 100
 
-let pi = 3.14
-pi = '次郎'
+let hello: string
+hello = 'こんにちは'
 
-let hobbies = true
-hobbies = 1
+let yes: boolean
+yes = true

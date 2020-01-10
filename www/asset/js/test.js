@@ -1,7 +1,7 @@
 "use strict";
-var myName = '太郎';
-myName = 28;
-var pi = 3.14;
-pi = '次郎';
-var hobbies = true;
-hobbies = 1;
+var num = 100;
+num = '太郎';
+var hello;
+hello = 'こんにちは';
+var yes;
+yes = true;
