@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import '_setting/_setting';
+
+/**
+ * Common Styles
+ *
+ * 01. foundation
+ * 02. Library
+ * 03. Block
+ */
+
+/* 01. foundation
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@import '_foundation/_foundation';
+
+/* 02. Library
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* 03. Block
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@import '_block/_@svg';
+@import '_block/_@button';
+@import '_block/_@accordion';
+@import '_block/_@attention';
+
+@import '_block/_application';
+@import '_block/_wrapper';
+@import '_block/_@transition';
+
+//作業用
+@import '_block/_test';

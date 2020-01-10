@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* List
+───────────────────────────────── */
+.\@attention__list {
+  @include mq-pc {
+    font-size: rem(13);
+  }
+  @include mq-sp {
+    font-size: vw(13);
+  }
+
+  &.-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.\@attention__item {
+  display: flex;
+  line-height: 1.5;
+  @at-root {
+    .\@attention__list:not(.-center) & {
+      width: 100%;
+    }
+  }
+
+  &:before {
+    content: '※';
+    @include mq-pc {
+      margin-right: rem(4);
+    }
+    @include mq-sp {
+      margin-right: 1vw;
+    }
+  }
+
+  & + * {
+    @include mq-pc {
+      margin-top: rem(4);
+    }
+    @include mq-sp {
+      margin-top: 1vw;
+    }
+  }
+}

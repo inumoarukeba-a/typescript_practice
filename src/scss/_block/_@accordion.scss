@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+/* Block
+───────────────────────────────── */
+.\@accordion {
+  position: relative;
+}
+
+/* Trigger
+───────────────────────────────── */
+.\@accordion__trigger {
+  cursor: pointer;
+  border-radius: inherit;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $duration $easing;
+    border-radius: inherit;
+  }
+  &:before {
+    background-color: $color-softBlue;
+  }
+  &:after {
+    border: 1px solid $color-main;
+  }
+
+  @include hover {
+    &:before {
+      opacity: 0.382;
+    }
+    &:after {
+      opacity: 0.618;
+    }
+    .\@accordion__button {
+      background: $color-main;
+      color: #fff;
+    }
+  }
+
+  @at-root .-opened > & {
+    &:after {
+      opacity: 0.618;
+    }
+    @include hover {
+      .\@accordion__button {
+        background: $color-text;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.\@accordion__button {
+  background-color: $color-softBlue;
+  align-items: center;
+  display: inline-flex;
+  line-height: 1.3;
+  color: $color-main;
+  border-radius: 5em;
+  transition: background-color $duration $easing, color $duration $easing;
+  position: relative;
+  z-index: 1;
+  @include mq-pc {
+    padding: rem(8) rem(24);
+  }
+  @include mq-sp {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 13vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: initial;
+    pointer-events: auto;
+  }
+
+  @at-root .-opened > .\@accordion__trigger & {
+    background-color: $color-lightGray;
+    color: $color-text;
+  }
+}
+
+.\@accordion__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq-pc {
+    width: rem(12);
+  }
+  @include mq-sp {
+    width: 3vw;
+  }
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+    width: inherit;
+    transition: background-color $duration $easing, transform $duration $easing;
+  }
+  &:after {
+    transform: rotate(90deg);
+  }
+
+  @at-root .-opened > .\@accordion__trigger & {
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  & + * {
+    @include mq-pc {
+      margin-left: rem(16);
+    }
+    @include mq-sp {
+      margin-left: 3vw;
+    }
+  }
+}
+
+/* Content
+───────────────────────────────── */
+.\@accordion__content {
+  display: none;
+}

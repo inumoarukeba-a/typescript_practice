@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* Block
+───────────────────────────────── */
+.\@button {
+  display: block;
+  border-radius: 5em;
+  border: 1px solid $color-main;
+  background: $color-main;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: color $duration $easing, background-color $duration $easing,
+    border-color $duration $easing, box-shadow, $duration $easing,
+    transform $duration $easing;
+  @include font-noto(medium);
+
+  @include mq-pc {
+    padding: rem(16) rem(24);
+    font-size: rem(15);
+    min-height: rem(56);
+  }
+  @include mq-sp {
+    padding: 3vw 8vw;
+    font-size: vw(15);
+    min-height: vw(56);
+  }
+
+  &.-inline {
+    display: inline-flex;
+    @include mq-pc {
+      padding: rem(16) rem(64);
+    }
+    &:not(.-spFull) {
+      @include mq-sp {
+        padding: 3vw 8vw;
+      }
+    }
+  }
+
+  .\@svg__path {
+    stroke: currentColor;
+  }
+
+  [class^='@svg__arrow'],
+  .\@svg__house {
+    @include mq-pc {
+      margin-right: rem(12);
+    }
+    @include mq-sp {
+      margin-right: 3vw;
+    }
+  }
+
+  .\@svg__house {
+    @include mq-pc {
+      width: rem(21);
+      height: rem(21);
+    }
+    @include mq-sp {
+      width: vw(21);
+      height: vw(21);
+    }
+  }
+
+  .\@svg__blank {
+    align-self: flex-end;
+    @include mq-pc {
+      width: rem(10);
+      height: rem(10);
+      margin-left: rem(8);
+    }
+    @include mq-sp {
+      width: vw(10);
+      height: vw(10);
+      margin-left: 1vw;
+    }
+  }
+
+  @include hover {
+    color: $color-main;
+    background-color: #fff;
+    border-color: $color-main;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    &.-white {
+      color: #fff;
+      background-color: rgba(#fff, 0);
+      border-color: #fff;
+    }
+  }
+  @include mq-pc {
+    &:hover {
+      transform: translateY(1px);
+    }
+  }
+  @include mq-sp {
+    &:active {
+      transform: translateY(1vw);
+    }
+  }
+}

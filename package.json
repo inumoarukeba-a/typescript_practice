@@ -1,0 +1,47 @@
+{
+  "name": "web-template",
+  "version": "1.0.0",
+  "author": "Ataru Nakano <atarunakano@gmail.com> (https://github.com/inumoarukeba-a)",
+  "description": "",
+  "keywords": [],
+  "private": true,
+  "main": "webpack.config.js",
+  "scripts": {
+    "watch": "webpack --watch --mode development & browser-sync start --config bs-config.js",
+    "production": "webpack --mode production"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "autoprefixer": "^9.7.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "core-js": "^3.6.2",
+    "css-loader": "^3.4.1",
+    "eslint": "^6.8.0",
+    "file-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "path": "^0.12.7",
+    "postcss-cli": "^7.1.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "element-closest": "^3.0.2",
+    "gsap": "^3.0.5",
+    "intersection-observer": "^0.7.0",
+    "lazysizes": "^5.2.0",
+    "lodash": "^4.17.15",
+    "object-fit-images": "^3.2.4",
+    "swiper": "^5.2.1",
+    "vue": "^2.6.11",
+    "vue-scrollto": "^2.17.1"
+  }
+}

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* SlideY
+───────────────────────────────── */
+.\@transition__scale {
+  &-enter-active,
+  &-leave-active,
+  &-move {
+    transition: opacity $duration $easing, transform $duration $easing;
+  }
+  &-leave-active {
+    position: absolute;
+  }
+  &-enter {
+    opacity: 0;
+    @include mq-pc {
+      transform: scale(0.9);
+      transform-origin: center center;
+    }
+  }
+  &-leave-to {
+    opacity: 0;
+    transform-origin: center center;
+  }
+}

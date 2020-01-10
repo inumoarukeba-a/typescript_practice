@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/* Media Query
+───────────────────────────────── */
+@mixin mq-pc {
+  @media screen and (min-width: $break-small + 1), print {
+    @content;
+  }
+}
+@mixin mq-sp {
+  @media screen and (max-width: $break-small) {
+    @content;
+  }
+}
+@mixin mq-min {
+  @media screen and (min-width: $min-basis) {
+    @content;
+  }
+}
+@mixin mq-max {
+  @media screen and (min-width: $max-basis), print {
+    @content;
+  }
+}
+@mixin mq-full {
+  @media screen and (min-width: $break-small + 1) and (max-width: $max-basis) {
+    @content;
+  }
+}
+
+/* Link
+───────────────────────────────── */
+@mixin hover() {
+  @include mq-pc {
+    &:hover {
+      @content;
+    }
+  }
+  @include mq-sp {
+    &:active {
+      @content;
+    }
+  }
+}
+@mixin link {
+  &,
+  &:active,
+  &:hover,
+  &:link,
+  &:visited {
+    @content;
+  }
+}
+
+/* Grid
+───────────────────────────────── */
+@mixin grid($options) {
+  // Gap
+  $gap-row: map-get($options, 'gap-row');
+  $gap-column: map-get($options, 'gap-column');
+  display: grid;
+  grid-row-gap: #{$gap-row};
+  grid-column-gap: #{$gap-column};
+  // Template
+  $child: map-get($options, 'child');
+  $column: map-get($options, 'column');
+  $template-columns: map-get($options, 'template-columns');
+  $template-rows: '';
+  @for $i from 1 through ceil($child / $column) {
+    $template-rows: $template-rows + auto + ' ';
+  }
+  grid-template: #{$template-rows} / #{$template-columns};
+  // Area
+  $element: map-get($options, 'element');
+  $row-area: 1;
+  $column-area: 1;
+  @for $i from 1 through $child {
+    #{$element}:nth-child(#{$i}) {
+      // -ms-grid-row: $row-area;
+      // -ms-grid-column: $column-area;
+      @if ($i % $column == 0) {
+        $row-area: $row-area + 1;
+        @if $gap-row != false {
+          $row-area: $row-area + 1;
+        }
+      }
+      @if $gap-column != false {
+        $column-area: $column-area + 1;
+        @if ($i % $column == 0) {
+          $column-area: 0;
+        }
+        $column-area: $column-area + 1;
+      }
+    }
+  }
+}
+
+/* Font
+───────────────────────────────── */
+@mixin font-noto($weight: demilight) {
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-style: normal;
+  @if $weight == light {
+    font-weight: 200;
+  } @else if $weight == demilight {
+    font-weight: 300;
+  } @else if $weight == regular {
+    font-weight: 400;
+  } @else if $weight == medium {
+    font-weight: 500;
+  } @else if $weight == bold {
+    font-weight: 700;
+  } @else {
+    font-weight: 300;
+  }
+}
+
+/* Pseudo
+───────────────────────────────── */
+@mixin pseudo {
+  content: '';
+  display: inline-block;
+}
+
+/* contents
+───────────────────────────────── */
+@mixin content-width {
+  @include mq-pc {
+    max-width: rem(strip-unit($max-basis));
+    min-width: rem(strip-unit($min-basis));
+    width: 100%;
+    padding-left: rem(64);
+    padding-right: rem(64);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* PC item & SP item
+───────────────────────────────── */
+@mixin pc-item {
+  @include mq-pc {
+    display: block;
+  }
+  @include mq-sp {
+    display: none;
+  }
+}
+@mixin sp-item {
+  @include mq-pc {
+    display: none;
+  }
+  @include mq-sp {
+    display: block;
+  }
+}
+
+/* Tel
+───────────────────────────────── */
+@mixin tel-linktext {
+  @include mq-pc {
+    pointer-events: none;
+    text-decoration: none;
+  }
+}
+
+/* Image
+───────────────────────────────── */
+@mixin img-full {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+@mixin ofi-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  font-family: 'object-fit: contain;';
+}
+
+@mixin ofi-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+
+/* Sticky
+───────────────────────────────── */
+@mixin sticky {
+  position: -webkit-sticky;
+  position: sticky;
+
+  &.sticky-fixed.is-sticky {
+    position: fixed;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  &.sticky-fixed.is-sticky:not([style*='margin-top']) {
+    margin-top: 0 !important;
+  }
+
+  &.sticky-fixed.is-sticky:not([style*='margin-bottom']) {
+    margin-bottom: 0 !important;
+  }
+
+  &.sticky-fixed.is-absolute {
+    position: absolute;
+  }
+}
+
+/* Clearfix
+───────────────────────────────── */
+@mixin cearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

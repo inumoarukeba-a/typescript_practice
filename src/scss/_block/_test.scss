@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+/* ラッパー
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+.test {
+  margin: 0 auto;
+  border: #fff;
+  box-shadow: 0 0 rem(40) rgba(0, 0, 0, 0.0618);
+  @include content-width;
+  @include mq-pc {
+    padding: rem(40);
+  }
+  @include mq-sp {
+    padding: 5vw;
+  }
+  & + & {
+    @include mq-pc {
+      margin-top: rem(80);
+    }
+    @include mq-sp {
+      margin-top: 8vw;
+    }
+  }
+}
+
+/* ヘッダー
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+.test__header {
+  font-weight: bold;
+  @include mq-pc {
+    font-size: rem(40);
+  }
+  @include mq-sp {
+    font-size: rem(16);
+  }
+  & + * {
+    @include mq-pc {
+      margin-top: rem(24);
+    }
+    @include mq-sp {
+      margin-top: 5vw;
+    }
+  }
+}
+
+/* タイトル
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+.test__title {
+  @include mq-pc {
+    font-size: rem(20);
+  }
+  @include mq-sp {
+    font-size: rem(16);
+  }
+  & + * {
+    @include mq-pc {
+      margin-top: rem(24);
+    }
+    @include mq-sp {
+      margin-top: 3vw;
+    }
+  }
+}
+
+/* テキスト
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+.test__text {
+  font-size: rem(16);
+  & + .test__title {
+    @include mq-pc {
+      margin-top: rem(40);
+    }
+    @include mq-sp {
+      margin-top: 3vw;
+    }
+  }
+}
+
+/* リスト
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+.test__list {
+  display: grid;
+}
+
+.test__item {
+  flex: 1;
+  border: 1px solid $color-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(18);
+  font-weight: bold;
+  @include mq-sp {
+    font-size: rem(16);
+  }
+}
+
+/* セクション
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+.test__section {
+  height: rem(150);
+  text-align: center;
+  background: #ccc;
+  font-size: rem(16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & + & {
+    @include mq-pc {
+      margin-top: rem(100);
+    }
+    @include mq-sp {
+      margin-top: rem(100);
+    }
+  }
+}
+
+/* コード
+−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−− */
+.test__code {
+  background-color: #f9f9f9;
+  display: block;
+  font-size: rem(15);
+  @include mq-pc {
+    padding: rem(24);
+  }
+  @include mq-sp {
+    padding: 3vw;
+  }
+  & + * {
+    @include mq-pc {
+      margin-top: rem(16);
+    }
+    @include mq-sp {
+      margin-top: 3vw;
+    }
+  }
+}

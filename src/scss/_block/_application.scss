@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* Block
+───────────────────────────────── */
+.application {
+  animation: cloak-in $duration $easing;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @include content-width;
+  &[v-cloak] {
+    opacity: 0;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  *::-ms-backdrop,
+  .application {
+    min-height: auto;
+    display: block;
+    overflow: hidden;
+  }
+}
