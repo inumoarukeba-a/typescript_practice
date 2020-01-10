@@ -65,7 +65,5 @@ function multiply(value1, value2) {
 }
 console.log(multiply(23, 7));
 var myFunctionType;
-myFunctionType = sayHello;
-myFunctionType();
 myFunctionType = multiply;
 console.log(myFunctionType(23, 89));
