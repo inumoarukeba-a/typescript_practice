@@ -136,3 +136,15 @@ const outputString = (text: string): void => {
   console.log(text)
 }
 console.log('こんにちは！')
+
+/**
+ * デフォルト引数
+ */
+const countDown = (start: number = 10): void => {
+  while (start > 0) {
+    console.log(start)
+    start--
+  }
+  console.log('終了')
+}
+countDown()
