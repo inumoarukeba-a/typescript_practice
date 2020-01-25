@@ -119,3 +119,20 @@ function checkLength(str: string | null): number {
     return 0
   }
 }
+
+function controlMe(isTrue: boolean) {
+  let result: number = 12
+  return result
+}
+
+/**
+ * アロー関数
+ */
+const addNum = (value1: number, valuer2: number): number => value1 + valuer2
+const mulNum = (value: number): number => value * 2
+console.log(mulNum(3))
+
+const outputString = (text: string): void => {
+  console.log(text)
+}
+console.log('こんにちは！')
