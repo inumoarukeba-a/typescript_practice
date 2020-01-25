@@ -82,3 +82,19 @@ var countDown = function (start) {
     console.log('終了');
 };
 countDown();
+function makeArray() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    return args;
+}
+console.log(makeArray(1, 2));
+function printInfo() {
+    var info = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        info[_i] = arguments[_i];
+    }
+    console.log("\u79C1\u306E\u540D\u524D\u306F" + info[0] + "\u3067\u3001" + info[1] + "\u6B73\u3067\u3059\u3002");
+}
+printInfo('太郎', 30);
