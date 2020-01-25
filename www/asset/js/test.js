@@ -103,8 +103,22 @@ var Person = (function () {
         this.name = name;
         this.place = place;
         this.age = age;
+        this.name = name;
+        this.place = place;
+        this.age = age;
     }
     return Person;
 }());
 var person = new Person('太郎', '東京', 30);
 console.log(person);
+var Helpers = (function () {
+    function Helpers() {
+    }
+    Helpers.calcCircum = function (diameter) {
+        return this.PI * diameter;
+    };
+    Helpers.PI = 3.14;
+    return Helpers;
+}());
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircum(83));
