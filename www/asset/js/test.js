@@ -68,11 +68,17 @@ var myFunctionType;
 myFunctionType = multiply;
 console.log(myFunctionType(23, 89));
 /**
- *
+ * オブジェクト
  */
 var complex = {
     data: [100, 3.14, -3],
     output: function (all) {
+        return this.data;
+    },
+};
+var complex2 = {
+    data: [123, 866, 1.9],
+    output: function (flag) {
         return this.data;
     },
 };
