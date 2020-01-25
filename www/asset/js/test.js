@@ -67,3 +67,12 @@ console.log(multiply(23, 7));
 var myFunctionType;
 myFunctionType = multiply;
 console.log(myFunctionType(23, 89));
+/**
+ *
+ */
+var complex = {
+    data: [100, 3.14, -3],
+    output: function (all) {
+        return this.data;
+    },
+};

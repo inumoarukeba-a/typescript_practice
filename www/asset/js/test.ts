@@ -78,3 +78,30 @@ console.log(multiply(23, 7))
 let myFunctionType: (val1: number, val2: number) => number
 myFunctionType = multiply
 console.log(myFunctionType(23, 89))
+
+/**
+ * オブジェクト
+ */
+let complex: {
+  data: number[]
+  output: (all: boolean) => number[]
+} = {
+  data: [100, 3.14, -3],
+  output: function(all: boolean): number[] {
+    return this.data
+  },
+}
+
+/**
+ * エイリアス
+ */
+type Complex = {
+  data: number[]
+  output: (all: boolean) => number[]
+}
+let complex2: Complex = {
+  data: [123, 866, 1.9],
+  output: function(flag: boolean): number[] {
+    return this.data
+  },
+}
