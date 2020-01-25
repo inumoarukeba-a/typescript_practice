@@ -98,3 +98,13 @@ function printInfo() {
     console.log("\u79C1\u306E\u540D\u524D\u306F" + info[0] + "\u3067\u3001" + info[1] + "\u6B73\u3067\u3059\u3002");
 }
 printInfo('太郎', 30);
+var Person = (function () {
+    function Person(name, place, age) {
+        this.name = name;
+        this.place = place;
+        this.age = age;
+    }
+    return Person;
+}());
+var person = new Person('太郎', '東京', 30);
+console.log(person);

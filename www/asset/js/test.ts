@@ -157,7 +157,25 @@ function makeArray(...args: number[]) {
 }
 console.log(makeArray(1, 2))
 
+// タプル
 function printInfo(...info: [string, number]) {
   console.log(`私の名前は${info[0]}で、${info[1]}歳です。`)
 }
 printInfo('太郎', 30)
+
+/**
+ * Clss
+ */
+class Person {
+  public name: string
+  private place: string
+  protected age: number
+
+  constructor(name: string, place: string, age: number) {
+    this.name = name
+    this.place = place
+    this.age = age
+  }
+}
+const person = new Person('太郎', '東京', 30)
+console.log(person)
