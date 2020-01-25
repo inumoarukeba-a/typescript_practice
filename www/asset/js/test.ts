@@ -197,7 +197,7 @@ console.log(Helpers.calcCircum(83))
  */
 class OnlyOne {
   private static instance: OnlyOne
-  private constructor(public name: string) {}
+  private constructor(public readonly name: string) {}
   static getInstance() {
     if (!OnlyOne.instance) {
       OnlyOne.instance = new OnlyOne('The Only One')
@@ -206,4 +206,6 @@ class OnlyOne {
   }
 }
 let right = OnlyOne.getInstance()
+console.log(right.name)
+right.name = '変更しました。'
 console.log(right.name)
