@@ -191,3 +191,19 @@ class Helpers {
 }
 console.log(2 * Helpers.PI)
 console.log(Helpers.calcCircum(83))
+
+/**
+ * Singleton
+ */
+class OnlyOne {
+  private static instance: OnlyOne
+  private constructor(public name: string) {}
+  static getInstance() {
+    if (!OnlyOne.instance) {
+      OnlyOne.instance = new OnlyOne('The Only One')
+    }
+    return OnlyOne.instance
+  }
+}
+let right = OnlyOne.getInstance()
+console.log(right.name)
