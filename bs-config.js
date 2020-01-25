@@ -24,7 +24,7 @@ module.exports = {
     ignoreInitial: true,
   },
   server: false,
-  proxy: 'https://typescript.example.php72/',
+  proxy: 'https://Typescript-study.example.php72/',
   port: 3000,
   middleware: false,
   serveStatic: [],
