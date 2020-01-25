@@ -1,33 +1,16 @@
 "use strict";
-/**
- * 型指定
- */
-// 数字
 var num = 100;
-// 文字列
 var hello;
 hello = 'こんにちは';
-// ルール型
 var yes;
 yes = true;
-// なんでも
 var car = 'BMW';
 car = { brand: 'BMW' };
-/**
- * 配列 - []
- */
 var hobbies = ['読書', 'スポーツ'];
 hobbies.push('100');
 console.log(hobbies);
-/**
- * タプル - [x, y]
- */
 var olympic = ['東京', 2020];
 console.log(olympic);
-/**
- * 列挙型 - enum
- */
-// 先頭を大文字
 var Colors;
 (function (Colors) {
     Colors[Colors["Gray"] = 0] = "Gray";
@@ -37,29 +20,19 @@ var Colors;
 })(Colors || (Colors = {}));
 var myColor = Colors.Green;
 console.log(myColor);
-/**
- * 関数
- */
 var myName = '太郎';
 function returnMyName() {
     return myName;
 }
 console.log(returnMyName());
-// returnを許可しない
 function sayHello() {
     console.log('Hello!');
 }
 sayHello();
-/**
- * Never
- */
 function noReturn() {
     throw new Error('エラーです！');
 }
 var something;
-/**
- * 引数
- */
 function multiply(value1, value2) {
     return value1 * value2;
 }
@@ -67,9 +40,6 @@ console.log(multiply(23, 7));
 var myFunctionType;
 myFunctionType = multiply;
 console.log(myFunctionType(23, 89));
-/**
- * オブジェクト
- */
 var complex = {
     data: [100, 3.14, -3],
     output: function (all) {
@@ -82,9 +52,6 @@ var complex2 = {
         return this.data;
     },
 };
-/**
- * union型 - 共同体型、合併型
- */
 var thisYear = '2019';
 thisYear = '2019';
 function checkLength(str) {
@@ -95,3 +62,14 @@ function checkLength(str) {
         return 0;
     }
 }
+function controlMe(isTrue) {
+    var result = 12;
+    return result;
+}
+var addNum = function (value1, valuer2) { return value1 + valuer2; };
+var mulNum = function (value) { return value * 2; };
+console.log(mulNum(3));
+var outputString = function (text) {
+    console.log(text);
+};
+console.log('こんにちは！');
