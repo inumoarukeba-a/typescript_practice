@@ -167,11 +167,11 @@ printInfo('太郎', 30)
  * Clss
  */
 class Person {
-  public name: string
-  private place: string
-  protected age: number
-
-  constructor(name: string, place: string, age: number) {
+  constructor(
+    public name: string,
+    private place: string,
+    protected age: number
+  ) {
     this.name = name
     this.place = place
     this.age = age
